@@ -1,21 +1,20 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { Category } from '../Category';
-import { categories as mockCategories } from '../../db.json';
 
 import { List, Item } from './styles';
 
 const useCategoriesData = () => {
-    const [categories, setCategories] = useState(mockCategories);
+    const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(false);
     
     useEffect(() => {
-        // setLoading(true);
-        // window.fetch('')
-        // .then(res => res.json)
-        // .then(response => {
-            //     setCategories(response);
-            //     setLoading(false);
-        // })
+        setLoading(true);
+        window.fetch('https://petgram-psi-seven.vercel.app/categories')
+        .then(res => res.json())
+        .then(response => {
+            setCategories(response);
+            setLoading(false);
+        });
     }, []);
 
     return { categories, loading };
