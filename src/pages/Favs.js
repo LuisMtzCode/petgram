@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { FavsWithQuery } from '../container/GetFavorites';
 
 export const Favs = () => {
     return (
-        <div>
+        <Fragment>
             Favs
-        </div>
-    )
-}
+            <FavsWithQuery />
+        </Fragment>
+    );
+};
