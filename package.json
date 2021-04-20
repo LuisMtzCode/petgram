@@ -34,6 +34,7 @@
     "react": "^17.0.2",
     "react-apollo": "^3.1.5",
     "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
     "styled-components": "^5.2.3"
   },
@@ -56,7 +57,10 @@
       }
     },
     "rules": {
-      "semi": [2, "always"],
+      "semi": [
+        2,
+        "always"
+      ],
       "no-undef": 0,
       "react/prop-types": 0
     },
