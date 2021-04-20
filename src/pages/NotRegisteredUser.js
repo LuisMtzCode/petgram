@@ -4,7 +4,7 @@ import { UserForm } from '../components/UserForm';
 import { RegisterMutation } from '../container/RegisterMutation';
 import { LoginMutation } from '../container/LoginMutation';
 
-export const NotRegisteredUser = () => {
+export default () => {
     const { activateAuth } = useContext(Context);
     return (
         <Fragment>
@@ -16,13 +16,13 @@ export const NotRegisteredUser = () => {
                             const variables = { input };
                             register({ variables }).then(({ data }) => {
                                 const { signup } = data;
-                                activateAuth(signup)
+                                activateAuth(signup);
                             });
-                        }
+                        };
 
                         const errorMsg = error && 'El usuario existe o hay algún problema';
 
-                        return <UserForm title='Registrarse' onSubmit={onSubmit} disabled={loading} error={errorMsg}/>
+                        return <UserForm title='Registrarse' onSubmit={onSubmit} disabled={loading} error={errorMsg}/>;
                     }
                 }
             </RegisterMutation>
@@ -36,16 +36,15 @@ export const NotRegisteredUser = () => {
                                 const { login } = data;
                                 activateAuth(login);
                             });
-                        }
+                        };
 
                         const errorMsg = error && 'La contraseña no es correcta o el usuario no existe';
 
-                        return (
-                            <UserForm title='Iniciar Sesión' onSubmit={onSubmit} disabled={loading} error={errorMsg}/>
-                        );
+                        return <UserForm title='Iniciar Sesión' onSubmit={onSubmit} disabled={loading} error={errorMsg}/>;
+                        
                     }
                 }
             </LoginMutation>
         </Fragment>
-    )
-}
+    );
+};
