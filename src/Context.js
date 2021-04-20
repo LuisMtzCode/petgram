@@ -11,15 +11,19 @@ const Provider = ({ children }) => {
         activateAuth: (token) => {
             window.sessionStorage.setItem('token', token);
             setIsAuth(true);
+        },
+        removeAuth: () => {
+            window.sessionStorage.removeItem('token');
+            setIsAuth(false);
         }
-    }
+    };
 
     return (
         <Context.Provider value={value}>
             {children}
         </Context.Provider>
     );
-}
+};
 
 export default {
     Provider,
