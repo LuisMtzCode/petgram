@@ -7,4 +7,6 @@ export const ListOfPhotoCardsComponent = ({ data: { photos = [] } } = {}) => {
             {photos.map(photo => <li key={photo.id}><PhotoCard {...photo}/></li>)}
         </ul>
     );
-}
+};
+
+export const ListOfPhotoCards = React.memo(ListOfPhotoCardsComponent);
