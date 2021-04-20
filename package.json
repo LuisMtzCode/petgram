@@ -57,7 +57,8 @@
     },
     "rules": {
       "semi": [2, "always"],
-      "no-undef": 0
+      "no-undef": 0,
+      "react/prop-types": 0
     },
     "env": {
       "node": true
