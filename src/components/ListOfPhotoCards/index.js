@@ -8,5 +8,3 @@ export const ListOfPhotoCardsComponent = ({ data: { photos = [] } } = {}) => {
         </ul>
     );
 };
-
-export const ListOfPhotoCards = React.memo(ListOfPhotoCardsComponent);
